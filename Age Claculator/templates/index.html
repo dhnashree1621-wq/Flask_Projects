@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="container">
+    <h2>🎂 Age Calculator</h2>
+
+    <form method="POST">
+        <input
+            type="number"
+            name="birth_year"
+            placeholder="Enter birth year"
+            required
+            value="{{ request.form.birth_year if request.form.birth_year else '' }}"
+        >
+
+        <input
+            type="number"
+            name="year_up_to"
+            placeholder="Calculate age up to year"
+            required
+            value="{{ request.form.year_up_to if request.form.year_up_to else '' }}"
+        >
+
+        <button type="submit">Get Age</button>
+    </form>
+
+    {% if age is not none %}
+        <div class="result">
+            🎉 In {{ year_up_to }}, your age will be <b>{{ age }}</b>
+        </div>
+
+        <a href="/" class="recalculate">Recalculate</a>
+    {% endif %}
+</div>
+
+{% if age is not none %}
+<script src="{{ url_for('static', filename='js/confetti.js') }}"></script>
+{% endif %}
+
+</body>
+</html>

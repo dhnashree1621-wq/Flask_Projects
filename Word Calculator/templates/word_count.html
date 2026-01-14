@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Counter Explosion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="box">
+    <form method="post">
+        <div class="heading">Enter Paragraph</div>
+        <textarea name="get_word" required>{{ text_value }}</textarea>
+
+        <button type="submit" name="count">Count Words</button>
+        <button type="submit" name="recalculate" class="recalculate">Recalculate</button>
+    </form>
+
+    {% if total_word is not none %}
+        <div class="result">
+            Total Words: <span>{{ total_word }}</span>
+        </div>
+
+        <div id="fall-area"></div>
+    {% endif %}
+</div>
+
+{% if total_word is not none %}
+<script src="{{ url_for('static', filename='wordexplosion.js') }}"></script>
+<script>
+    startWordExplosion(`{{ text_value }}`);
+</script>
+{% endif %}
+
+</body>
+</html>
