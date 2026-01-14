@@ -28,7 +28,7 @@ This repository contains **three small web applications built with Flask**:
 ---
 
 ## Technologies Used
-- Python 3.x
+- Python 
 - Flask
 - HTML, CSS, JavaScript (for frontend)
 
