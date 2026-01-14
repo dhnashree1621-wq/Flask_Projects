@@ -38,4 +38,4 @@ This repository contains **three small web applications built with Flask**:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/flask-mini-projects.git
+   git clone https://github.com/dhnashree1621-wq/flask-mini-projects.git
