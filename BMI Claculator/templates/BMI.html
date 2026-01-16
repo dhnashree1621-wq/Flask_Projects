@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="scene">
+    <div id="card" class="card"
+         data-flip="{% if BMI is not none %}true{% else %}false{% endif %}">
+
+        <div class="side front">
+            <h2>BMI Calculator</h2>
+
+            <form method="post">
+                <label style="text-align:left; display:block;">Weight (kg)</label>
+                <input type="number" step="0.01" name="Weight" required>
+
+                <label style="text-align:left; display:block;">Height (meters)</label>
+                <input type="number" step="0.01" name="Height" required>
+
+                <button type="submit">Get BMI</button>
+            </form>
+        </div>
+
+        <div class="side back">
+            {% if BMI is not none %}
+                <h2>Your BMI</h2>
+                <h1 style="color:#2c7be5;">{{ BMI }}</h1>
+
+                <p style="color:#555; margin-top:10px;">
+                    Your Fitness Status
+                </p>
+
+                <h3 style="
+                    color:
+                    {% if fitness == 'Fit / Healthy' %}green
+                    {% elif fitness == 'Underweight' %}orange
+                    {% elif fitness == 'Overweight' %}darkorange
+                    {% else %}red
+                    {% endif %}
+                ">
+                    {{ fitness }}
+                </h3>
+
+                <span class="again" onclick="flipBack()">
+                    Calculate Again
+                </span>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

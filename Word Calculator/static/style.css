@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b7e4d3;
+}
+
+.box {
+    width: 500px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1.5px solid #94a3b8;
+    resize: none;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background: #0ea5a4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0284c7;
+}
+
+.recalculate {
+    background: #64748b;
+}
+
+.recalculate:hover {
+    background: #475569;
+}
+
+.result {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #0f172a;
+}
+
+.result span {
+    font-weight: bold;
+    color: #0ea5a4;
+}
+
+#fall-area {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 15px;
+    background: #d1f0eb;
+    border: 2px dashed #94a3b8;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.word-explode {
+    position: absolute;
+    font-weight: 600;
+    color: #0ea5a4;
+    white-space: nowrap;
+    pointer-events: none;
+}
